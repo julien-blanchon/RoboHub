@@ -14,7 +14,7 @@
 		"lint": "prettier --check . && eslint ."
 	},
 	"dependencies": {
-		"lerobot-arena-client": "git+https://github.com/julien-blanchon/RoboHub.git#main:services/transport-server/client/js"
+		"@robohub/transport-server-client": "git+https://github.com/julien-blanchon/RoboHub.git#main:services/transport-server/client/js"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
