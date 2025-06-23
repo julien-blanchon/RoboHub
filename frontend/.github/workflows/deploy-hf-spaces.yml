@@ -1,0 +1,31 @@
+name: Deploy to Hugging Face Spaces
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Bun
+      uses: oven-sh/setup-bun@v1
+      with:
+        bun-version: latest
+    
+    - name: Install dependencies
+      run: bun install --frozen-lockfile
+    
+    - name: Build static site
+      run: bun run build
+    
+    - name: Deploy to Hugging Face Spaces
+      uses: huggingface/huggingface_hub@main
+      with:
+        HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        space_id: ${{ secrets.HF_SPACE_ID }}
+        local_folder: build
+        space_folder: . 
