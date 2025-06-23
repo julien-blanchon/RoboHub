@@ -14,7 +14,7 @@
 		"lint": "prettier --check . && eslint ."
 	},
 	"dependencies": {
-		"@robohub/transport-server-client": "git+https://github.com/julien-blanchon/RoboHub.git#main:services/transport-server/client/js"
+		"@robohub/transport-server-client": "https://gitpkg.now.sh/julien-blanchon/RoboHub/services/transport-server/client/js?main"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
